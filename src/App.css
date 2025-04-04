@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root container */
+
+#root {
+    @apply max-w-5xl mx-auto p-8 text-center;
+}
+
+
+/* Logo */
+
+.logo {
+    @apply h-24 p-6 transition-transform duration-300;
+}
+
+.logo:hover {
+    @apply drop-shadow-lg;
+}
+
+
+/* Animated logo */
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Apply animation */
+
+.animate-spin-logo {
+    animation: logo-spin infinite 20s linear;
+}
+
+
+/* Card */
+
+.card {
+    @apply p-8 bg-white dark: bg-gray-800 rounded-lg shadow-lg transition-transform duration-200 hover: -translate-y-1;
+}
+
+
+/* Button */
+
+.btn {
+    @apply bg-blue-500 text-white px-4 py-2 rounded hover: bg-blue-600 transition-all;
+}
+
+
+/* Dark mode button */
+
+.dark-toggle {
+    @apply bg-gray-200 dark: bg-gray-700 text-black dark: text-white px-4 py-2 rounded;
+}
+
+
+/* Read the docs */
+
+.read-the-docs {
+    @apply text-gray-500;
+}
