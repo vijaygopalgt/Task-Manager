@@ -5,7 +5,7 @@ import FilterButtons from "../components/Filterbutton";
 import TaskList from "../components/Tasklist";
 import useTaskStore from "../store/store";
 
-const TaskManager = () => {
+const Task = () => {
   const { tasks, loadTasks } = useTaskStore();
   const [filter, setFilter] = useState("all");
   const [darkMode, setDarkMode] = useState(
@@ -43,4 +43,4 @@ const TaskManager = () => {
   );
 };
 
-export default TaskManager;
+export default Task;

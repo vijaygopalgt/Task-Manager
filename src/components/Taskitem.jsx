@@ -7,9 +7,9 @@ const TaskItem = ({ task }) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleCompletion = () => {
-    const updatedCompletion = task.completed === "true" ? "false" : "true";
-    updateTask(task.id, { ...task, completed: updatedCompletion });
+    updateTask(task.id, { ...task, completed: !task.completed });
   };
+  
 
   const status = task.completed === "true" ? "Completed" : "Pending";
 
@@ -57,14 +57,14 @@ const TaskItem = ({ task }) => {
             </p>
             <div className="flex flex-wrap gap-2 mt-1">
               {task.category && (
-                <span className="text-xs bg-blue-500 text-white px-2 py-1 rounded-full">
-                  {task.category}
-                </span>
-              )}
-              {task.dueDate && (
-                <span className="text-xs bg-gray-300 dark:bg-gray-700 text-black dark:text-white px-2 py-1 rounded-full">
-                  Due: {task.dueDate}
-                </span>
+                <span
+                className={`text-sm px-2 py-1 rounded-full ${
+                  task.completed ? "bg-green-500" : "bg-yellow-500"
+                } text-white`}
+              >
+                {task.completed ? "Completed" : "Pending"}
+              </span>
+              
               )}
             </div>
           </div>

@@ -1,4 +1,4 @@
-// src/pages/loginpage.jsx
+
 import React, { useState } from "react";
 import {
   signInWithGoogle,
@@ -16,16 +16,17 @@ const Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailPassword(email, password);
-      navigate("/taskmanager");
+      console.log("Redirecting to /task");
+      navigate("/task"); // ✅ FIXED PATH
     } catch (err) {
       setError("Invalid email or password");
     }
   };
-
+  
   const handleGoogleLogin = async () => {
     try {
       await signInWithGoogle();
-      navigate("/taskmanager");
+      navigate("/task"); // ✅ FIXED PATH
     } catch (err) {
       setError("Google login failed");
     }
